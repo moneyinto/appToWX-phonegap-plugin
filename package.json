@@ -1,0 +1,22 @@
+{
+    "name": "appToWX-phonegap-plugin",
+    "version": "0.0.1",
+    "description": "for app go to wx",
+    "cordova": {
+        "id": "appToWX-phonegap-plugin",
+        "platforms": [
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com"
+    },
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova-ios",
+        "cordova-android"
+    ],
+    "author": "moneyinto",
+    "license": "MIT"
+}

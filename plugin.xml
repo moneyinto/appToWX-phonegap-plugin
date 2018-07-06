@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="com.moneyinto.plugins.appToWX"
+  version="0.0.1">
+
+    <name>appToWX</name>
+    <description>for app go to wx</description>
+    <author>moneyinto</author>
+    <keywords>appToWX</keywords>
+
+    <preference name="APPID" />
+    <preference name="USERNAME" />
+
+    <js-module src="www/APPTOWXPlugin.js" name="APPTOWXPlugin">
+        <clobbers target="ATW" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="APPTOWXPlugin">
+                <param name="android-package" value="com.moneyinto.plugins.APPTOWXPlugin" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest" mode="merge">
+            <!-- Required  一些系统要求的权限，如访问网络等 -->
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
+            <!-- Required. Enable it you can get statistics data with channel -->
+            <meta-data android:name="APPID" android:value="$APPID" />
+            <meta-data android:name="USERNAME" android:value="$USERNAME" />
+        </config-file>
+        <source-file src="src/android/APPTOWXPlugin.java" target-dir="src/com/moneyinto/plugins" />
+        <framework src="com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+" />
+    </platform>
+
+    <!-- <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+            <feature name="APPTOWXPlugin">
+                <param name="ios-package" value="APPTOWXPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/APPTOWXPlugin.h"/>
+        <source-file src="src/ios/APPTOWXPlugin.m"/>
+    </platform> -->
+</plugin>
