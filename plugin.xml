@@ -45,14 +45,35 @@
         <framework src="com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+" />
     </platform>
 
-    <!-- <platform name="ios">
+    <platform name="ios">
         <config-file target="config.xml" parent="/widget">
             <feature name="APPTOWXPlugin">
                 <param name="ios-package" value="APPTOWXPlugin" />
                 <param name="onload" value="true" />
             </feature>
+            <preference name="APPID" value="$APPID"/>
+            <preference name="USERNAME" value="$USERNAME"/>
         </config-file>
+
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+            <array>
+                <string>weixin</string>
+            </array>
+        </config-file>
+
         <header-file src="src/ios/APPTOWXPlugin.h"/>
         <source-file src="src/ios/APPTOWXPlugin.m"/>
-    </platform> -->
+
+        <header-file src="src/ios/libs/WXApi.h" />
+        <header-file src="src/ios/libs/WXApiObject.h" />
+        <source-file src="src/ios/libs/libWeChatSDK.a" framework="true" />
+
+        <framework src="libz.tbd" />
+        <framework src="libsqlite3.0.tbd" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Security.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="libstdc++.6.tbd" />
+    </platform>
 </plugin>
