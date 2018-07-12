@@ -2,8 +2,8 @@
 #import "WXApi.h"
 #import "WXApiObject.h"
 
-@interface APPTOWXPlugin : CDVPlugin<WXApiDelegate> {
+@interface APPTOWXPlugin : CDVPlugin<WXApiDelegate>
 
-}
+@property (nonatomic, strong) NSString *username;
 
 @end
