@@ -55,9 +55,7 @@ public class APPTOWXPlugin extends CordovaPlugin {
         IWXAPI api = WXAPIFactory.createWXAPI(mContext, appId);
         WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
         req.userName = userName; // 填小程序原始id
-        if (args.getString(0) != null) {
-            req.path = args.getString(0); 
-        }
+        req.path = args.getString(0); 
         req.miniprogramType = WXLaunchMiniProgram.Req.MINIPTOGRAM_TYPE_RELEASE;// 可选打开 开发版，体验版和正式版
         api.sendReq(req);
         callbackContext.success();
