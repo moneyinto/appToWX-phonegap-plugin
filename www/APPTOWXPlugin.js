@@ -12,8 +12,8 @@ APPTOWXPlugin.prototype.callNative = function (name, args, successCallback, erro
     }
 }
 
-APPTOWXPlugin.prototype.go = function (path, successCallback, errorCallback) {
-    this.callNative('go', [path], successCallback, errorCallback);
+APPTOWXPlugin.prototype.go = function (userName, path, successCallback, errorCallback) {
+    this.callNative('go', [userName, path], successCallback, errorCallback);
 }
 
 if (!window.APPTOWXPlugin) {

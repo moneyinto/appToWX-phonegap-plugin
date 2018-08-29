@@ -6,14 +6,13 @@
 {
     [super pluginInitialize];
     NSString* appid = [[self.commandDelegate settings] objectForKey:@"appid"];
-    self.username = [[self.commandDelegate settings] objectForKey:@"username"];
     [WXApi registerApp: appid];
 }
 
 - (void)go:(CDVInvokedUrlCommand*)command
 {
-    NSString* username = self.username;
-    NSString *path = [command.arguments objectAtIndex:0];
+    NSString* username = [command.arguments objectAtIndex:0];
+    NSString *path = [command.arguments objectAtIndex:1];
     WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
     launchMiniProgramReq.userName = username;  //拉起的小程序的username
     launchMiniProgramReq.path = path;    //拉起小程序页面的可带参路径，不填默认拉起小程序首页

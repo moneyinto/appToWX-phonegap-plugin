@@ -4,10 +4,10 @@ App 跳转至微信启动小程序
 
 ### 安装插件命令
 ```
-cordova plugin add https://github.com/moneyinto/appToWX-phonegap-plugin.git --variable APPID=APPID --variable USERNAME=USERNAME
+cordova plugin add https://github.com/moneyinto/appToWX-phonegap-plugin.git --variable APPID=APPID
 ```
 
-***注意：这里的APPID不是小程序的APPID，而是微信开放平台的APPID！USERNAME就是小程序的原始ID，可以在登录小程序的平台找到！***
+***注意：这里的APPID不是小程序的APPID，而是微信开放平台的APPID！***
 
 
 ### 在安装插件前，我们需要做一些准备工作：
@@ -28,7 +28,7 @@ cordova plugin add https://github.com/moneyinto/appToWX-phonegap-plugin.git --va
 ### 通过下面代码完成APP跳转至微信小程序
 
 ```
-APPTOWXPlugin.go('pages/index/index'); // 参数为小程序的路径
+APPTOWXPlugin.go('username', 'pages/index/index'); // 第一个参数为USERNAME, 就是小程序的原始ID，可以在登录小程序的平台找到！第二个参数为小程序的路径
 ```
 
 ### 关于三个变量的说明，可以自己在插件的做相应的修改，没有写配置的地方

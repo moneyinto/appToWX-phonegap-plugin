@@ -51,11 +51,11 @@ public class APPTOWXPlugin extends CordovaPlugin {
     void go(CordovaArgs args, CallbackContext callbackContext) throws JSONException, PackageManager.NameNotFoundException {
         ApplicationInfo info = mContext.getPackageManager().getApplicationInfo(mContext.getPackageName(), PackageManager.GET_META_DATA);
         String appId = info.metaData.getString("APPID"); // 填应用AppId
-        String userName = info.metaData.getString("USERNAME");
+        String userName = args.getString(0);
         IWXAPI api = WXAPIFactory.createWXAPI(mContext, appId);
         WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
         req.userName = userName; // 填小程序原始id
-        req.path = args.getString(0); 
+        req.path = args.getString(1); 
         req.miniprogramType = WXLaunchMiniProgram.Req.MINIPTOGRAM_TYPE_RELEASE;// 可选打开 开发版，体验版和正式版
         api.sendReq(req);
         callbackContext.success();
