@@ -14,15 +14,15 @@ cordova plugin add https://github.com/moneyinto/appToWX-phonegap-plugin.git --va
 
 - 在开发平台创建移动移用（审核大概需要3-7天）
 
-![](http://7sbq8w.com1.z0.glb.clouddn.com/O8R%29A7QXHB6C~3QWNVKFYGW.png)
+![](./O8R%29A7QXHB6C~3QWNVKFYGW.png)
 
 - 关联小程序
 
-![](http://7sbq8w.com1.z0.glb.clouddn.com/0VSMJ2K%60%7DU%294DRCGKMDWSRJ.png)
+![](./0VSMJ2K%60%7DU%294DRCGKMDWSRJ.png)
 
 - 在移动应用可以看到查看，点击进去可以看到相关信息
 
-![](http://7sbq8w.com1.z0.glb.clouddn.com/8N1ET0R%7B9%5DP%605@SGV_AM@BX.png)
+![](./8N1ET0R%7B9%5DP%605@SGV_AM@BX.png)
 
 
 ### 通过下面代码完成APP跳转至微信小程序
